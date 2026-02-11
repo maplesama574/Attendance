@@ -9,17 +9,17 @@ Route::get('/', function () {
 });
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLogin']);
-    Route::get('/register', [AuthController::class, 'showRegister']);
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+
+    Route::get('/email/verification', [AuthController::class, 'showEmail'])->name('verification.verify');
 });
 
 Route::middleware(['auth', 'verfied'])->group(function () {
 
-    Route::get('/email/verification', [AttendanceController::class, 'index'])->name('verification.verify');
-
-    Route::get('/attendance', [AttendanceController::class, 'index']);
+    Route::get('/attendance', [AttendanceController::class, 'index'])->name('attendance');
     /* ここ下にログイン必要なルーティングを書く */
 });

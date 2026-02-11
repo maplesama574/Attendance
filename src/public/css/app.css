@@ -1,0 +1,18 @@
+body{
+    margin:0 auto;
+    padding: 0;
+}
+header{
+    margin: 0;
+    background-color: black;
+    width: auto;
+    height: 70px;
+}
+.header-logo img{
+    margin: 15px 20px;
+}
+
+.error{
+    color: red;
+    padding: 0;
+}

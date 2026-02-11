@@ -29,4 +29,14 @@ class AuthController extends Controller
 
         return redirect()->route('verification.verify');
     }
+
+    public function login()
+    {
+        return redirect()->route('attendance');
+    }
+
+    public function showEmail()
+    {
+        return view('auth.email');
+    }
 }
