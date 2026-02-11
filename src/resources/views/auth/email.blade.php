@@ -7,15 +7,17 @@
 @section('content')
 
 <div class="email">
-    <form action="post" action="{{route('verification.verify')}}">
+    <form action="get" action="{{route('verification.verify')}}">
+        @csrf
         <div class="email__text">
-            <p>登録していただいたメールアドレスに認証メールを送付しました。<br>メール認証を完了してください。</p>
+            <p class="email__text-content">登録していただいたメールアドレスに認証メールを送付しました。</p>
+            <p class="email__text-content">メール認証を完了してください。</p>
         </div>
         <div class="button">
-            <a href="http://localhost:8025/">認証はこちらから</a>
+            <a class="next-button" href="http://localhost:8025/">認証はこちらから</a>
         </div>
         <div class="reset-button">
-            <a href="">認証メールを再送する</a>
+            <a class="verify-button" href="">認証メールを再送する</a>
         </div>
     </form>
 </div>
