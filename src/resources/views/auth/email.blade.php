@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="email">
-    <form action="get" action="{{route('verification.verify')}}">
+    <form action="get" action="{{route('verification.notice')}}">
         @csrf
         <div class="email__text">
             <p class="email__text-content">登録していただいたメールアドレスに認証メールを送付しました。</p>

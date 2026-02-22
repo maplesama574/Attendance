@@ -10,7 +10,7 @@
     <div class="login__title">
         <h1>ログイン</h1>
     </div>
-    <form method="POST" action="{{route('auth.login')}}">
+    <form method="POST" action="{{route('login')}}">
         @csrf
         <div class="login__list">
             <div class="login__item">
@@ -31,7 +31,7 @@
         <div class="button">
             <button class="login-button">ログインする
             </button>
-            <a class="register" href="{{route('auth.register')}}">会員登録はこちら
+            <a class="register" href="{{route('register')}}">会員登録はこちら
             </a>
         </div>
     </form>

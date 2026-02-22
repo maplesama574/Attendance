@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="header">
-            <a class="header-logo" href="{{route('auth.login')}}">
+            <a class="header-logo" href="{{route('login')}}">
                 <img src="{{ asset('image/COACHTECHヘッダーロゴ.png') }}">
             </a>
         </div>
