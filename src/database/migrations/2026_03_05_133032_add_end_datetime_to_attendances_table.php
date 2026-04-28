@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBreakTable extends Migration
+class AddEndDatetimeToAttendancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateBreakTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendances', function (Blueprint $table) {
-            $table->id();
-            $table->dateTime('start_datetime');
-            $table->timestamps();
-        });
         Schema::table('attendances', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamp('end_datetime')->nullable();
         });
     }
 
@@ -30,6 +25,8 @@ class CreateBreakTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('break');
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->dropColumn('end_datetime');
+        });
     }
 }

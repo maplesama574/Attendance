@@ -1,4 +1,4 @@
-@extends('auth.common4')
+@extends('auth.common2')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/attendance-detail.css')}}">
@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="attendance">
-        <form method="POST" action="{{ route('admin.update', $attendance->id) }}">
+        <form method="POST" action="{{ route('admin.attendance', $attendance->id) }}">
             @csrf
             @method('PATCH')
             <div class="title">
@@ -16,7 +16,7 @@
                 <table class="table">
                     <tr class="table-content">
                         <th class="table-header">名前</th>
-                        <td class="table-detail__name" colspan="3">{{ $attendance->user->name }}</td>
+                        <td class="table-detail__name" colspan="3">{{$name}}</td>
                     </tr>
                     <tr class="table-content">
                         <th class="table-header">日付</th>
@@ -53,22 +53,6 @@
                         </td>
                     </tr>
                     @endforeach
-                    <tr class="table-content">
-                        <th class="table-header">
-                        @if(count($attendance->breakTimes) == 0)
-                            休憩
-                        @else
-                            休憩{{ count($attendance->breakTimes) + 1 }}
-                        @endif
-                        </th>
-                        <td class="table-detail">
-                            <input type="time" name="break_start[]" class="icon-del" value="">
-                        </td>
-                        <td class="table-decoration">～</td>
-                        <td class="table-detail__left">
-                            <input type="time" name="break_end[]" class="icon-del" value="">
-                        </td>
-                    </tr>
                     <tr class="table-content">
                         <th class="table-header">備考</th>
                         <td class="table-detail" colspan="3">

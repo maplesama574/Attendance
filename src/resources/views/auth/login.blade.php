@@ -12,6 +12,7 @@
     </div>
     <form method="POST" action="{{route('login')}}">
         @csrf
+        <input type="hidden" name="login_type" value="user">
         <div class="login__list">
             <div class="login__item">
                 <p class="login__name">メールアドレス</p>

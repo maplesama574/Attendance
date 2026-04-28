@@ -1,0 +1,73 @@
+.attendance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    flex-direction: column;
+}
+
+.title {
+    border-left: 7px solid black;
+}
+
+.title-message {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0px 680px 0px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*内容*/
+.table {
+    margin-top: 80px;
+    width: 830px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.table-header {
+    width: 830px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header-item {
+    padding: 10px;
+    color: #737373;
+    text-align: center;
+}
+.header-item__name{
+    color: #737373;
+    padding-left: 100px;
+}
+.header-item__month{
+    color: #737373;
+    padding-right: 100px;
+}
+
+.attendance-table td {
+    padding: 10px;
+    border-top: 1px solid #e1e1e1;
+    text-align: center;
+}
+
+.attendance-table td:first-child{
+    padding-left: 100px;
+}
+.attendance-table td:last-child {
+    padding-right: 100px;
+}
+
+.content-detail a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}

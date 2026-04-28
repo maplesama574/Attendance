@@ -11,12 +11,14 @@ class CreateAttendancesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() :void
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->dateTime('start_datetime');
             $table->timestamps();
+            $table->integer('status')->default(2);
+            $table->text('remarks')->nullable();
         });
         Schema::table('attendances', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

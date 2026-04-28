@@ -1,4 +1,4 @@
-@extends('auth.common2')
+@extends('auth.common4')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/stamp-correction-request-list.css')}}">
@@ -31,11 +31,9 @@
                 @foreach($attendances as $attendance)
                     <tr class="content">
                         <td class="content-item">
-                            {{ $status == 0 ? '承認待ち' : '承認済み' }}
+                            {{ $attendance->status == 0 ? '承認待ち' : '承認済み' }}
                         </td>
-                        <td class="content-item">
-                            {{ $attendance->user->name }}
-                        </td>
+                        <td class="content-item">{{ $attendance->user->name }}</td>
                         <td class="content-item">{{ \Carbon\Carbon::parse($attendance->start_datetime)->isoFormat('YYYY/MM/DD') }}</td>
                         <td class="content-item">
                             {{ $attendance->remarks }}
@@ -44,7 +42,9 @@
                             {{ \Carbon\Carbon::parse($attendance->approval_datetime)->isoFormat('YYYY/MM/DD') }}
                         </td>
                         <td class="content-detail">
-                            <a href="{{ route('approval-detail', ['id' => $attendance->id]) }}">詳細</a>
+                            <a href="{{ route('admin.approval-detail', ['attendance_correct_request_id' => $attendance->id]) }}">
+                                詳細
+                            </a>
                         </td>
                     </tr>
                 @endforeach

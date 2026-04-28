@@ -1,12 +1,12 @@
-@extends('auth.common2')
+@extends('auth.common4')
 
 @section('css')
-<link rel="stylesheet" href="css/attendance.css">
+<link rel="stylesheet" href="css/staff-detail.css">
 @endsection
 
 @section('content')
     <div class="attendance">
-        <form method="POST" action="{{route('attendance.save')}}">
+        <form method="POST" action="{{route('admin.staff-detail')}}">
             @csrf
             <div class="attendance__status">
                 <p class="status">勤務外</p>

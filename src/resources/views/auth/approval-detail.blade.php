@@ -1,12 +1,12 @@
 @extends('auth.common2')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/attendance-detail.css')}}">
+<link rel="stylesheet" href="{{asset('css/approval-detail.css')}}">
 @endsection
 
 @section('content')
     <div class="attendance">
-        <form method="POST" action="{{ route('attendance.update', $attendance->id) }}">
+        <form method="POST" action="{{ route('approval.update', $attendance->id) }}">
             @csrf
             @method('PATCH')
             <div class="title">
@@ -26,11 +26,9 @@
                     </tr>
                     <tr class="table-content">
                         <th class="table-header">出勤・退勤</th>
-                        <td class="table-detail"><input class="icon-del" type="time" name="start_time"
-                        value="{{ old('start_time', \Carbon\Carbon::parse($attendance->start_datetime)->format('H:i')) }}"></td>
+                        <td class="table-detail">{{ old('start_time', \Carbon\Carbon::parse($attendance->start_datetime)->format('H:i')) }}</td>
                         <td class="table-decoration">～</td>
-                        <td class="table-detail__left"><input class="icon-del" type="time" name="end_time"
-                        value="{{ old('end_time', $attendance->end_datetime ? \Carbon\Carbon::parse($attendance->end_datetime)->format('H:i') : '') }}">
+                        <td class="table-detail__left">{{ old('end_time', $attendance->end_datetime ? \Carbon\Carbon::parse($attendance->end_datetime)->format('H:i') : '') }}
                         </td>
                     </tr>
                     @foreach($attendance->breakTimes as $break)
@@ -43,42 +41,24 @@
                             @endif
                         </th>
                         <td class="table-detail">
-                            <input type="time" name="break_start[]" class="icon-del"
-                            value="{{ old('break_start', optional($break->break_start)->format('H:i')) }}">
+                            {{ old('break_start', optional($break->break_start)->format('H:i')) }}
                         </td>
                         <td class="table-decoration">～</td>
                         <td class="table-detail__left">
-                            <input type="time" name="break_end[]" class="icon-del"
-                            value="{{ old('break_end', optional($break->break_end)->format('H:i')) }}">
+                            {{ old('break_end', optional($break->break_end)->format('H:i')) }}
                         </td>
                     </tr>
                     @endforeach
                     <tr class="table-content">
-                        <th class="table-header">
-                        @if(count($attendance->breakTimes) == 0)
-                            休憩
-                        @else
-                            休憩{{ count($attendance->breakTimes) + 1 }}
-                        @endif
-                        </th>
-                        <td class="table-detail">
-                            <input type="time" name="break_start[]" class="icon-del" value="">
-                        </td>
-                        <td class="table-decoration">～</td>
-                        <td class="table-detail__left">
-                            <input type="time" name="break_end[]" class="icon-del" value="">
-                        </td>
-                    </tr>
-                    <tr class="table-content">
                         <th class="table-header">備考</th>
-                        <td class="table-detail" colspan="3">
-                        <textarea class="table-detail__textarea" name="remarks" id="remarks">{{ old('remarks', $attendance->remarks) }}</textarea>
+                        <td class="table-detail__textarea" colspan="3">  
+                            {{ old('remarks', $attendance->remarks) }}
                         </td>
                     </tr>
                 </table>
-            </div>
-            <div class="button">
-                <button type="submit" class="reset-button">修正</button>
+                <div class="not-message">
+                    <p class="message">*承認待ちのため修正はできません。</p>
+                </div>
             </div>
         </form>
     </div>

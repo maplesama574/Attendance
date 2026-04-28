@@ -1,15 +1,15 @@
 @extends('auth.common2')
 
 @section('css')
-<link rel="stylesheet" href="css/attendance.css">
+<link rel="stylesheet" href="{{asset('css/break.css')}}">
 @endsection
 
 @section('content')
     <div class="attendance">
-        <form method="POST" action="{{route('attendance.save')}}">
+        <form method="POST" action="{{route('attendance.break.end')}}">
             @csrf
             <div class="attendance__status">
-                <p class="status">勤務外</p>
+                <p class="status">休憩中</p>
             </div>
             <div class="attendance-date">
                 <div class="date">
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="button">
-                <button class="start-button" type="submit">出勤</button>
+                <button class="attendance-button" type="submit">休憩戻</button>
             </div>
         </form>
     </div>

@@ -1,0 +1,91 @@
+.attendance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+
+.title{
+    border-left: 7px solid black;
+}
+.title-message{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0px 670px 0px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*ページネーション*/
+.page{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 40px 0 30px 0;
+    border-radius: 10px;
+    padding: 0;
+}
+.previous-month{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 16px;
+    padding-right: 285px;
+    color: #737373;
+    font-weight: bold;
+}
+.next-month{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 16px;
+    padding-left: 285px;
+    color: #737373;
+    font-weight: bold;
+}
+.date{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*内容*/
+.table {
+    width: 790px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.table-header{
+    width: 790px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.header-item{
+    color: #737373;
+}
+.attendance-table td {
+    padding: 10px;
+    border-top: 1px solid #e1e1e1;
+    text-align: center;
+}
+.content-item{
+    color: #737373;
+}
+.content-detail a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.detail{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}

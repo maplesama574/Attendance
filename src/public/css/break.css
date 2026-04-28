@@ -1,4 +1,4 @@
-.attendance{
+.attendance {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,10 +7,11 @@
     flex-direction: column;
 }
 
-.attendance__status{
+.attendance__status {
     margin-left: 200px;
 }
-.status{
+
+.status {
     font-size: 15px;
     border-radius: 15px;
     background-color: #c8c8c8;
@@ -19,34 +20,39 @@
     margin-right: 200px;
 }
 
-.date{
+.date {
     padding: 0;
     text-align: center;
 }
-.date-detail{
+
+.date-detail {
     margin-top: -1px;
     font-size: 50px;
 }
-.time{
+
+.time {
     padding: 0;
     text-align: center;
 }
+
 .time-detail {
     margin-top: -35px;
     font-size: 80px;
     font-weight: bold;
 }
 
-.button{
+.button {
     display: block;
     text-align: center;
 }
-.start-button{
+
+.attendance-button {
     padding-top: -20px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 30px;
     font-weight: bold;
     padding: 10px 75px;
     border-radius: 15px;
+    border: 1px solid white;
 }

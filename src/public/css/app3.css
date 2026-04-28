@@ -11,29 +11,32 @@ header {
     height: 70px;
 }
 
-.header{
+.header {
     display: flex;
 }
+
 .header-logo img {
     margin: 15px 20px;
 }
 
 /*nav*/
-.nav{
-    padding-left: 525px;
+.nav {
+    padding-left: 400px;
     padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     gap: 30px;
 }
+
 .nav-item {
     color: white;
     font-weight: bold;
     font-size: 23px;
     text-decoration: none;
 }
-.nav-item__logout{
+
+.nav-item__logout {
     color: white;
     background-color: black;
     font-weight: bold;
